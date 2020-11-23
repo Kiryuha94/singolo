@@ -1,0 +1,60 @@
+.wrapper__portfolio {
+  background-color: $color-background-portfolio;
+}
+
+.portfolio__header {
+  padding: 0 4rem 1.5rem;
+  .portfolio__title {
+    padding: 5.9rem 0 1.3rem;
+    color: $color-portfolio-title;
+  }
+
+  .portfolio__descreption {
+    @include font($weight: 300, $size: 1.8rem, $height: 3rem);
+    color: $color-portfolio-text_tags;
+  }
+}
+.portfolio__tags {
+  margin: 0 4rem 1.8rem;
+
+  .tag {
+    @include font($weight: 400, $size: 1.2rem, $height: 1.2rem);
+    color: $color-portfolio-text_tags;
+    border: 1px solid #767e9e;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.portfolio__img {
+  max-width: 94rem;
+  margin: 0 auto;
+  padding-bottom: 6.8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  img:nth-child(1n + 13 ){
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 68.7rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+
+  @media (max-width: 376px) {
+    max-width: 31.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.3rem;
+    grid-row-gap: 1.3rem;
+  }
+}

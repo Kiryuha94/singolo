@@ -1,0 +1,26 @@
+#slides {
+  position: relative;
+  height: 57rem;
+  overflow: hidden;
+}
+
+.wrapper__slider1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-slider1-background;
+
+  @media (max-width: 376px) {
+    height: 24rem;
+  }
+}
+.slider {
+  position: relative;
+  padding-top: 9.5rem;
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+.hidden {
+  display: none;
+}

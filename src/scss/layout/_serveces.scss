@@ -1,0 +1,112 @@
+.wrapper__serveces {
+  color: $color-background-serveces;
+}
+
+.serveces__header {
+  max-width: 94rem;
+  margin: 5.9rem 4rem 3rem;
+  .serveces__title {
+    color: $color-serveses-text;
+  }
+
+  .serveces__description {
+    @include font($weight: 300, $size: 1.8rem, $height: 3rem);
+    color: $color-serveses-text;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 68.7rem;
+  }
+
+  @media (max-width: 376px) {
+    max-width: 31.4rem;
+  }
+}
+
+.layout-3-colums {
+  padding: 0 0 3rem 4rem;
+  max-width: 98rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+
+  @media (max-width: 768px) {
+    max-width: 68.7rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5.3rem;
+    grid-row-gap: 3.9rem;
+  }
+
+  @media (max-width: 376px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1.3rem;
+  }
+}
+
+.serveces__item {
+  .serveces__icon {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 2px solid $color-serveses-title_icon;
+    float: left;
+    background: url(../../../img/serv_items/services-item-1--nocircle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .serveces__name {
+    @include font($weight: 900, $size: 1.8rem, $height: 1.8rem);
+    color: $color-serveses-text;
+    margin: 0.8rem 0 0 8rem;
+  }
+
+  .serveces__descrition {
+    @include font($weight: 400, $size: 1.2rem, $height: 2.2rem);
+    color: $color-serveses-text;
+    margin-left: 8rem;
+  }
+
+  &_2 {
+    .serveces__icon {
+      background: url(../../../img/serv_items/services-item-2--nocircle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &_3 {
+    margin-right: 0;
+    .serveces__icon {
+      background: url(../../../img/serv_items/services-item-3--nocircle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &_4 {
+    .serveces__icon {
+      background: url(../../../img/serv_items/services-item-4--nocircle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &_5 {
+    .serveces__icon {
+      background: url(../../../img/serv_items/services-item-5--nocircle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &_6 {
+    margin-right: 0;
+    .serveces__icon {
+      background: url(../../../img/serv_items/services-item-6--nocircle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

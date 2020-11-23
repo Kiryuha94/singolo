@@ -1,0 +1,49 @@
+.wrapper__slider2 {
+  background-color: $color-slider2-background;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.slider-2__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slider2__phones {
+    max-width: 52rem;
+    max-height: 47rem;
+    display: flex;
+    align-items: center;
+    margin: 4.1rem 0 3.6rem;
+
+    .phone {
+      max-width: 15.4vw;
+
+      &_right {
+        transform: translate(-3rem, 0);
+       
+        img {
+          width: 100%;
+        }
+      }
+
+      &_left {
+        transform: translate(2rem, 0);
+        img {
+          width: 100%;
+        }
+      }
+    }
+    
+    .phone-center {
+      z-index: 100;
+      max-width: 25vw;
+
+      img {
+          width: 100%;
+      }
+     
+    }
+  }
+}

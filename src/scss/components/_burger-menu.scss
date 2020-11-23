@@ -1,0 +1,96 @@
+@keyframes slider-menu {
+  from {
+    left: -28rem;
+  }
+  to {
+    left: 0;
+  }
+}
+.hidden-menu {
+    display: none;
+}
+
+.wrapper__burger-menu {
+  background-color: #333;
+  opacity: 0.7;
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  min-height: 100vh;
+  transition: all 0.5s linear;
+}
+
+
+// .burger {
+//   display: none;
+//   width: 3.2rem;
+//   height: 2.8rem;
+//   background: url(../../../img/burger/Burger-menu-icon.svg);
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   margin: 2.5rem 0 2.5rem 1.5rem;
+//   transition: 0.2s linear;
+
+  // &_rotate {
+  //   transform: rotate(90deg);
+  //   transition: 0.3s linear;
+  // }
+
+//   @media (max-width: 376px) {
+//     display: block;
+//   }
+
+//   @media (max-width: 767px) {
+//     display: block;
+//   }
+// }
+ 
+
+.durger-menu {
+  position: fixed;
+  background-color: $color-burger-menu-beckground;
+  width: 100%;
+  max-width: 70%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: 1000;
+  transition: 0.5s;
+  animation: slider-menu 0.5s linear;
+
+  .header__durger-menu {
+    display: flex;
+
+    .logo__burger-menu {
+      padding-top: 2.4rem;
+      margin: 0 auto;
+      max-width: 13.5rem;
+    }
+
+    .burger_rotate {
+      transform: rotate(90deg);
+    }
+  }
+
+  .navbar__burger-menu {
+    margin: 18rem 0 0 7.1rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+
+    .content__burger-menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar__text {
+      padding-bottom: 2.4rem;
+      @include font($weight: 700, $size: 2.4rem, $height: 2.8rem);
+
+      &_active {
+        color: $color-text-active;
+        transition: 0.2s linear;
+      }
+    }
+  }
+}
