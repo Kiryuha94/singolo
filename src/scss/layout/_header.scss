@@ -12,7 +12,6 @@
   @media (max-width: 376px) {
     position: static;
   }
-
 }
 
 .burger {
@@ -50,18 +49,18 @@
     content: '*';
     color: $color-text-active;
   }
+
   @media (max-width: 767px) {
     width: 25rem;
     margin: 0 auto;
   }
-  
+
   @media (max-width: 376px) {
     width: 18rem;
     margin: 0 auto;
     padding: 2.4rem 0 2.4rem;
     @include font($size: 1.9rem, $height: 2.3rem, $weight: bold);
   }
-
 }
 
 .navbar {
@@ -96,6 +95,7 @@
   .active {
     color: $color-text-active;
   }
+  
   .navbar_point::after {
     content: '.';
     color: $color-text-white;

@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollServeces = serveces.getBoundingClientRect().y
   let scrollPortfolio = portfolio.getBoundingClientRect().y
   let scrollAbout = about.getBoundingClientRect().y
-  let scrollContact = contact.getBoundingClientRect().y
 
   let currentTab = navbarHome
 
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       currentTab = navbarContact
     }
   })
+
   navbarHome.addEventListener('click', () => {
     home.scrollIntoView({
       behavior: 'smooth',
@@ -64,22 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth',
       block: 'start',
     })
+  })
 
-    navbarPortfolio.addEventListener('click', () => {
-      portfolio.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+  navbarPortfolio.addEventListener('click', () => {
+    portfolio.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
     })
   })
+
   navbarAbout.addEventListener('click', () => {
     about.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     })
     currentTab.classList.remove('active')
-      navbarAbout.classList.add('active')
-      currentTab = navbarAbout
+    navbarAbout.classList.add('active')
+    currentTab = navbarAbout
   })
   navbarContact.addEventListener('click', () => {
     contact.scrollIntoView({
@@ -88,5 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  document.addEventListener('scroll', () => {})
 })

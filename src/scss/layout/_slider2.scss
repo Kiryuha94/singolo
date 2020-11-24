@@ -22,7 +22,7 @@
 
       &_right {
         transform: translate(-3rem, 0);
-       
+
         img {
           width: 100%;
         }
@@ -35,15 +35,14 @@
         }
       }
     }
-    
+
     .phone-center {
       z-index: 100;
       max-width: 25vw;
 
       img {
-          width: 100%;
+        width: 100%;
       }
-     
     }
   }
 }

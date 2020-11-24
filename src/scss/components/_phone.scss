@@ -5,7 +5,6 @@
   max-height: 55rem;
   @media (min-width: 1020px) {
   }
-  
 
   .vertical-phone-shadow {
     margin: 6.2vw 3vw 7vw 11vw;
@@ -76,7 +75,6 @@
         }
       }
     }
-
 
     &__camera {
       color: $color-arrow;
@@ -151,7 +149,7 @@
           display: none;
         }
       }
-      
+
       @media (min-width: 1020px) {
         width: 18.7rem;
         height: 33.1rem;

@@ -20,32 +20,6 @@
   transition: all 0.5s linear;
 }
 
-
-// .burger {
-//   display: none;
-//   width: 3.2rem;
-//   height: 2.8rem;
-//   background: url(../../../img/burger/Burger-menu-icon.svg);
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   margin: 2.5rem 0 2.5rem 1.5rem;
-//   transition: 0.2s linear;
-
-  // &_rotate {
-  //   transform: rotate(90deg);
-  //   transition: 0.3s linear;
-  // }
-
-//   @media (max-width: 376px) {
-//     display: block;
-//   }
-
-//   @media (max-width: 767px) {
-//     display: block;
-//   }
-// }
- 
-
 .durger-menu {
   position: fixed;
   background-color: $color-burger-menu-beckground;
