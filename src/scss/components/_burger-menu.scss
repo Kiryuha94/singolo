@@ -7,7 +7,7 @@
   }
 }
 .hidden-menu {
-    display: none;
+  display: none;
 }
 
 .wrapper__burger-menu {
@@ -20,7 +20,7 @@
   transition: all 0.5s linear;
 }
 
-.durger-menu {
+.burger-menu {
   position: fixed;
   background-color: $color-burger-menu-beckground;
   width: 100%;
@@ -50,7 +50,6 @@
     padding: 0;
     display: flex;
     justify-content: center;
-
 
     .content__burger-menu {
       display: flex;

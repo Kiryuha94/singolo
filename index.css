@@ -51,7 +51,7 @@
   display: none;
   width: 3.2rem;
   height: 2.8rem;
-  background: url(../../../img/burger/Burger-menu-icon.svg);
+  background-image: url("img/burger/Burger-menu-icon.png");
   background-position: center;
   background-repeat: no-repeat;
   margin: 2.5rem 0 2.5rem 1.5rem;
@@ -536,7 +536,7 @@
   border-radius: 50%;
   border: 2px solid #666d89;
   float: left;
-  background: url(../../../img/serv_items/services-item-1--nocircle.svg);
+  background: url("img/serv_items/services-item-1--nocircle.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -555,7 +555,7 @@
   margin-left: 8rem;
 }
 .serveces__item_2 .serveces__icon {
-  background: url(../../../img/serv_items/services-item-2--nocircle.svg);
+  background: url("img/serv_items/services-item-2--nocircle.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -563,17 +563,17 @@
   margin-right: 0;
 }
 .serveces__item_3 .serveces__icon {
-  background: url(../../../img/serv_items/services-item-3--nocircle.svg);
+  background: url("img/serv_items/services-item-3--nocircle.png");
   background-repeat: no-repeat;
   background-position: center;
 }
 .serveces__item_4 .serveces__icon {
-  background: url(../../../img/serv_items/services-item-4--nocircle.svg);
+  background: url("img/serv_items/services-item-4--nocircle.png");
   background-repeat: no-repeat;
   background-position: center;
 }
 .serveces__item_5 .serveces__icon {
-  background: url(../../../img/serv_items/services-item-5--nocircle.svg);
+  background: url(img/serv_items/services-item-5--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -581,7 +581,7 @@
   margin-right: 0;
 }
 .serveces__item_6 .serveces__icon {
-  background: url(../../../img/serv_items/services-item-6--nocircle.svg);
+  background: url(img/serv_items/services-item-6--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -687,6 +687,7 @@
   display: flex;
   flex-direction: row;
   list-style: none;
+  margin-right: 3.4rem;
 }
 @media (max-width: 376px) {
   .footer__container .social-buttons {
@@ -695,33 +696,17 @@
   }
 }
 .footer__container .social-buttons .buttons__icon {
-  display: inline-block;
+  display: flex;
   width: 3.2rem;
   height: 3.2rem;
   border: 2px solid #666D89;
   border-radius: 50%;
-  background: url(../../../img/social_icon/ico-facebook--nocircle.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  justify-content: center;
+  align-items: center;
   margin-right: 0.8rem;
 }
-.footer__container .social-buttons .buttons__icon_2 {
-  background: url(../../../img/social_icon/ico-google-plus--nocircle.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.8rem;
-}
-.footer__container .social-buttons .buttons__icon_3 {
-  background: url(../../../img/social_icon/ico-twitter--nocircle.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.8rem;
-}
-.footer__container .social-buttons .buttons__icon_4 {
-  background: url(../../../img/social_icon/ico-linkedin--nocircle.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 4.2rem;
+.footer__container .social-buttons .buttons__icon:hover {
+  transform: scale(1.4);
 }
 
 @keyframes slider-menu {
@@ -746,7 +731,7 @@
   transition: all 0.5s linear;
 }
 
-.durger-menu {
+.burger-menu {
   position: fixed;
   background-color: #2D303A;
   width: 100%;
@@ -757,34 +742,34 @@
   transition: 0.5s;
   animation: slider-menu 0.5s linear;
 }
-.durger-menu .header__durger-menu {
+.burger-menu .header__durger-menu {
   display: flex;
 }
-.durger-menu .header__durger-menu .logo__burger-menu {
+.burger-menu .header__durger-menu .logo__burger-menu {
   padding-top: 2.4rem;
   margin: 0 auto;
   max-width: 13.5rem;
 }
-.durger-menu .header__durger-menu .burger_rotate {
+.burger-menu .header__durger-menu .burger_rotate {
   transform: rotate(90deg);
 }
-.durger-menu .navbar__burger-menu {
+.burger-menu .navbar__burger-menu {
   margin: 18rem 0 0 7.1rem;
   padding: 0;
   display: flex;
   justify-content: center;
 }
-.durger-menu .navbar__burger-menu .content__burger-menu {
+.burger-menu .navbar__burger-menu .content__burger-menu {
   display: flex;
   flex-direction: column;
 }
-.durger-menu .navbar__burger-menu .navbar__text {
+.burger-menu .navbar__burger-menu .navbar__text {
   padding-bottom: 2.4rem;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 2.8rem;
 }
-.durger-menu .navbar__burger-menu .navbar__text_active {
+.burger-menu .navbar__burger-menu .navbar__text_active {
   color: #f06c64;
   transition: 0.2s linear;
 }

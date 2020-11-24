@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollServeces = serveces.getBoundingClientRect().y
   let scrollPortfolio = portfolio.getBoundingClientRect().y
   let scrollAbout = about.getBoundingClientRect().y
-
   let currentTab = navbarHome
 
   document.addEventListener('scroll', () => {
@@ -88,5 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
       block: 'start',
     })
   })
-
 })

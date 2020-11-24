@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.classList.add('hidden')
     }
   })
-  
+
   arrowLeft.addEventListener('click', () => {
     if (!activeButton) return
     activeButton = false

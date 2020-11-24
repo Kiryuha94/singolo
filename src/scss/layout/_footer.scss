@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: row;
     list-style: none;
+    margin-right: 3.4rem;
 
     @media (max-width: 376px) {
       width: 15.2rem;
@@ -36,34 +37,17 @@
     }
 
     .buttons__icon {
-      display: inline-block;
+      display: flex;
       width: 3.2rem;
       height: 3.2rem;
       border: 2px solid $color-footer-text_icon;
       border-radius: 50%;
-      background: url(../../../img/social_icon/ico-facebook--nocircle.svg);
-      background-repeat: no-repeat;
-      background-position: center;
+      justify-content: center;
+      align-items: center;
       margin-right: 0.8rem;
-
-      &_2 {
-        background: url(../../../img/social_icon/ico-google-plus--nocircle.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-right: 0.8rem;
-      }
-      &_3 {
-        background: url(../../../img/social_icon/ico-twitter--nocircle.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-right: 0.8rem;
-      }
-      &_4 {
-        background: url(../../../img/social_icon/ico-linkedin--nocircle.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-right: 4.2rem;
-      }
+    }
+    .buttons__icon:hover {
+      transform: scale(1.4);
     }
   }
 }
