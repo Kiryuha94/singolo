@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollAbout = about.getBoundingClientRect().y
   let currentTab = navbarHome
 
+  const headerHeight = document.querySelector('.wrapper__haeder').getBoundingClientRect().height
+  
   document.addEventListener('scroll', () => {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
 
@@ -23,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
       navbarHome.classList.add('active')
       currentTab = navbarHome
     }
-
-    if (scrolled >= scrollServeces && scrolled < scrollPortfolio) {
+    
+    if (scrolled + headerHeight >= scrollServeces && scrolled + headerHeight < scrollPortfolio) {
       currentTab.classList.remove('active')
       navbarServeces.classList.add('active')
       currentTab = navbarServeces
     }
 
-    if (scrolled >= scrollPortfolio && scrolled < scrollAbout) {
+    if (scrolled + headerHeight >= scrollPortfolio && scrolled < scrollAbout) {
       currentTab.classList.remove('active')
       navbarPortfolio.classList.add('active')
       currentTab = navbarPortfolio
