@@ -622,6 +622,10 @@
 .portfolio__tags .tag:hover {
   transform: scale(1.2);
 }
+.portfolio__tags .tag__active {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
 
 .portfolio__img {
   max-width: 94rem;

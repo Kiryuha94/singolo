@@ -31,7 +31,13 @@
         transform: scale(1.2);
       }
   }
+  
+  .tag__active {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
 }
+
 
 .portfolio__img {
   max-width: 94rem;
