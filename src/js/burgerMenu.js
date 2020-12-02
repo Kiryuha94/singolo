@@ -1,16 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   const home = document.getElementById('sliderHome')
-  const serveces = document.getElementById('serveces')
+  const services = document.getElementById('services')
   const portfolio = document.getElementById('portfolio')
   const about = document.getElementById('aboutPortfolio')
   const contact = document.getElementById('contact')
   const navbarBurgerHome = document.getElementById('navbarBurgerHome')
-  const navbarBurgerServeces = document.getElementById('navbarBurgerServeces')
+  const navbarBurgerServices = document.getElementById('navbarBurgerservices')
   const navbarBurgerPortfolio = document.getElementById('navbarBurgerPortfolio')
   const navbarBurgerAbout = document.getElementById('navbarBurgerAbout')
   const navbarBurgerContact = document.getElementById('navbarBurgerContact')
   const hiddenMenu = document.getElementById('hiddenMenu')
   const burger = document.getElementById('burger')
+
+  const scrollOptions = {
+    behavior: 'smooth',
+    block: 'start',
+  }
 
   burger.addEventListener('click', (e) => {
     hiddenMenu.classList.toggle('hidden-menu')
@@ -18,64 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   let currentBurgerTag = navbarBurgerHome
-
-  navbarBurgerHome.addEventListener('click', () => {
-    home.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-    currentBurgerTag.classList.remove('navbar__text_active')
-    navbarBurgerHome.classList.add('navbar__text_active')
-    currentBurgerTag = navbarBurgerHome
+  const onScroll = (element, navBarElement) => () => {
+    element.scrollIntoView(scrollOptions)
     hiddenMenu.classList.toggle('hidden-menu')
     burger.classList.toggle('burger_rotate')
-  })
-
-  navbarBurgerServeces.addEventListener('click', () => {
-    serveces.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
     currentBurgerTag.classList.remove('navbar__text_active')
-    navbarBurgerServeces.classList.add('navbar__text_active')
-    currentBurgerTag = navbarBurgerServeces
-    hiddenMenu.classList.toggle('hidden-menu')
-    burger.classList.toggle('burger_rotate')
-  })
+    currentBurgerTag = navBarElement
+    navBarElement.classList.add('navbar__text_active')
+  }
 
-  navbarBurgerPortfolio.addEventListener('click', () => {
-    portfolio.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-    currentBurgerTag.classList.remove('navbar__text_active')
-    navbarBurgerPortfolio.classList.add('navbar__text_active')
-    currentBurgerTag = navbarBurgerPortfolio
-    hiddenMenu.classList.toggle('hidden-menu')
-    burger.classList.toggle('burger_rotate')
-  })
-
-  navbarBurgerAbout.addEventListener('click', () => {
-    about.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-    currentBurgerTag.classList.remove('navbar__text_active')
-    navbarBurgerAbout.classList.add('navbar__text_active')
-    currentBurgerTag = navbarBurgerAbout
-    hiddenMenu.classList.toggle('hidden-menu')
-    burger.classList.toggle('burger_rotate')
-  })
-
-  navbarBurgerContact.addEventListener('click', () => {
-    contact.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-    currentBurgerTag.classList.remove('navbar__text_active')
-    navbarBurgerContact.classList.add('navbar__text_active')
-    currentBurgerTag = navbarBurgerContact
-    hiddenMenu.classList.toggle('hidden-menu')
-    burger.classList.toggle('burger_rotate')
-  })
+  navbarBurgerHome.addEventListener('click', onScroll(home, navbarBurgerHome))
+  navbarBurgerServices.addEventListener('click', onScroll(services, navbarBurgerServices))
+  navbarBurgerPortfolio.addEventListener('click', onScroll(portfolio, navbarBurgerPortfolio))
+  navbarBurgerAbout.addEventListener('click', onScroll(about, navbarBurgerAbout))
+  navbarBurgerContact.addEventListener('click', onScroll(contact, navbarBurgerContact))
 })

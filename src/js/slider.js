@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let activeButton = true
+  let isActiveButton = true
   let slideIndex = 0
   const slider = document.getElementById('slides')
   const arrowLeft = document.getElementById('arrowLeft')
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   arrowLeft.addEventListener('click', () => {
-    if (!activeButton) return
-    activeButton = false
+    if (!isActiveButton) return
+    isActiveButton = false
     const nextSlideIndex = slideIndex === 0 ? slidesCount - 1 : slideIndex - 1
 
     const s1 = slides[slideIndex]
@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
         s2.style.left = '0px'
         s1.classList.add('hidden')
         slideIndex = nextSlideIndex
-        activeButton = true
+        isActiveButton = true
       }
     }, 1)
   })
 
   arrowRight.addEventListener('click', () => {
-    if (!activeButton) return
-    activeButton = true
+    if (!isActiveButton) return
+    isActiveButton = true
     const nextSlideIndex = slideIndex + 1 === slidesCount ? 0 : slideIndex + 1
 
     const s1 = slides[slideIndex]
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     s2.style.left = `${-width}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-
-    const step = width / 200
+    const intervalStep = 200
+    const step = width / intervalStep
 
     const interval = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         s2.style.left = '0px'
         s1.classList.add('hidden')
         slideIndex = nextSlideIndex
-        activeButton = true
+        isActiveButton = true
       }
     }, 1)
   })

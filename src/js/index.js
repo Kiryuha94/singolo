@@ -1,92 +1,88 @@
 document.addEventListener('DOMContentLoaded', () => {
   const home = document.getElementById('sliderHome')
-  const serveces = document.getElementById('serveces')
+  const services = document.getElementById('services')
   const portfolio = document.getElementById('portfolio')
   const about = document.getElementById('aboutPortfolio')
   const contact = document.getElementById('contact')
   const navbarPortfolio = document.getElementById('navbarPortfolio')
   const navbarHome = document.getElementById('navbarHome')
-  const navbarServeces = document.getElementById('navbarServeces')
+  const navbarservices = document.getElementById('navbarservices')
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
-  let scrollHome = home.getBoundingClientRect().y
-  let scrollServeces = serveces.getBoundingClientRect().y
-  let scrollPortfolio = portfolio.getBoundingClientRect().y
-  let scrollAbout = about.getBoundingClientRect().y
   let currentTab = navbarHome
+  const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
 
-  const headerHeight = document.querySelector('.wrapper__haeder').getBoundingClientRect().height
-  
+  const scrollOptions = {
+    behavior: 'smooth',
+    block: 'start',
+  }
+
   document.addEventListener('scroll', () => {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
+    const arry = [
+      {
+        buttonId: 'navbarHome',
+        sectionId: 'sliderHome',
+      },
+      {
+        buttonId: 'navbarservices',
+        sectionId: 'services',
+      },
+      {
+        buttonId: 'navbarPortfolio',
+        sectionId: 'portfolio',
+      },
+      {
+        buttonId: 'navbarAbout',
+        sectionId: 'aboutPortfolio',
+      },
+      {
+        buttonId: 'navbarContact',
+        sectionId: 'contact',
+      },
+    ]
+    const get = (id) => document.getElementById(id)
 
-    if (scrolled >= scrollHome && scrolled < scrollServeces) {
-      currentTab.classList.remove('active')
-      navbarHome.classList.add('active')
-      currentTab = navbarHome
-    }
-    
-    if (scrolled + headerHeight >= scrollServeces && scrolled + headerHeight < scrollPortfolio) {
-      currentTab.classList.remove('active')
-      navbarServeces.classList.add('active')
-      currentTab = navbarServeces
+    const activeButton = (button) => {
+      arry.forEach(({ buttonId }) => get(buttonId).classList.remove('active'))
+      button.classList.add('active')
     }
 
-    if (scrolled + headerHeight >= scrollPortfolio && scrolled < scrollAbout) {
-      currentTab.classList.remove('active')
-      navbarPortfolio.classList.add('active')
-      currentTab = navbarPortfolio
-    }
-
-    const isBottomOfDocument = scrolled + window.innerHeight + 5 > document.body.getBoundingClientRect().height
-
-    if (scrolled >= scrollAbout && !isBottomOfDocument) {
-      currentTab.classList.remove('active')
-      navbarAbout.classList.add('active')
-      currentTab = navbarAbout
-    }
-
-    if (isBottomOfDocument) {
-      currentTab.classList.remove('active')
-      navbarContact.classList.add('active')
-      currentTab = navbarContact
-    }
+    arry.forEach(({ buttonId, sectionId }, index) => {
+      const button = get(buttonId)
+      const section = get(sectionId)
+      const sectionTop = section.offsetTop
+      const sectionBottom = sectionTop + get(sectionId).offsetHeight
+      if (index + 1 < arry.length) {
+        if (scrolled + headerHeight >= sectionTop && scrolled + headerHeight < sectionBottom) {
+          activeButton(button)
+        }
+      } else if (scrolled + headerHeight + window.innerHeight + 10 > sectionBottom) {
+        activeButton(button)
+      }
+    })
   })
 
   navbarHome.addEventListener('click', () => {
-    home.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+    home.scrollIntoView(scrollOptions)
   })
 
-  navbarServeces.addEventListener('click', () => {
-    serveces.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+  navbarservices.addEventListener('click', () => {
+    services.scrollIntoView(scrollOptions)
   })
 
   navbarPortfolio.addEventListener('click', () => {
-    portfolio.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+    portfolio.scrollIntoView(scrollOptions)
   })
 
   navbarAbout.addEventListener('click', () => {
-    about.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+    about.scrollIntoView(scrollOptions)
     currentTab.classList.remove('active')
     navbarAbout.classList.add('active')
     currentTab = navbarAbout
   })
+
   navbarContact.addEventListener('click', () => {
-    contact.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+    contact.scrollIntoView(scrollOptions)
   })
 })

@@ -4,12 +4,13 @@
 
 .portfolio__header {
   padding: 0 4rem 1.5rem;
+
   .portfolio__title {
     padding: 5.9rem 0 1.3rem;
     color: $color-portfolio-title;
   }
 
-  .portfolio__descreption {
+  .portfolio__description {
     @include font($weight: 300, $size: 1.8rem, $height: 3rem);
     color: $color-portfolio-text_tags;
   }
@@ -21,7 +22,7 @@
   .tag {
     @include font($weight: 400, $size: 1.2rem, $height: 1.2rem);
     color: $color-portfolio-text_tags;
-    border: 1px solid #767e9e;
+    border: 1px solid $color-portfolio-text_tags;
     border-radius: 5px;
     margin-right: 1rem;
     cursor: pointer;
@@ -33,8 +34,8 @@
   }
   
   .tag__active {
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    color: $color-portfolio-tags_active;
+    border: 1px solid $color-portfolio-tags_active;
   }
 }
 

@@ -1,15 +1,16 @@
-.wrapper__serveces {
-  color: $color-background-serveces;
+.wrapper__services {
+  color: $color-background-services;
 }
 
-.serveces__header {
+.services__header {
   max-width: 94rem;
   padding: 5.9rem 4rem 3rem;
-  .serveces__title {
+
+  .services__title {
     color: $color-serveses-text;
   }
 
-  .serveces__description {
+  .services__description {
     @include font($weight: 300, $size: 1.8rem, $height: 3rem);
     color: $color-serveses-text;
   }
@@ -44,69 +45,61 @@
   }
 }
 
-.serveces__item {
-  .serveces__icon {
+.services__item {
+  .services__icon {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
     border: 2px solid $color-serveses-title_icon;
     float: left;
     background: url('img/serv_items/services-item-1--nocircle.png');
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
-  .serveces__name {
+  .services__name {
     @include font($weight: 900, $size: 1.8rem, $height: 1.8rem);
     color: $color-serveses-text;
     margin: 0.8rem 0 0 8rem;
   }
 
-  .serveces__descrition {
+  .services__descrition {
     @include font($weight: 400, $size: 1.2rem, $height: 2.2rem);
     color: $color-serveses-text;
     margin-left: 8rem;
   }
 
   &_2 {
-    .serveces__icon {
+    .services__icon {
       background: url('img/serv_items/services-item-2--nocircle.png');
-      background-repeat: no-repeat;
-      background-position: center;
     }
   }
 
   &_3 {
     margin-right: 0;
-    .serveces__icon {
+    .services__icon {
       background: url('img/serv_items/services-item-3--nocircle.png');
-      background-repeat: no-repeat;
-      background-position: center;
     }
   }
 
   &_4 {
-    .serveces__icon {
+    .services__icon {
       background: url('img/serv_items/services-item-4--nocircle.png');
-      background-repeat: no-repeat;
-      background-position: center;
     }
   }
 
   &_5 {
-    .serveces__icon {
+    .services__icon {
       background: url(img/serv_items/services-item-5--nocircle.png);
-      background-repeat: no-repeat;
-      background-position: center;
     }
   }
 
   &_6 {
     margin-right: 0;
-    .serveces__icon {
+    .services__icon {
       background: url(img/serv_items/services-item-6--nocircle.png);
-      background-repeat: no-repeat;
-      background-position: center;
     }
+  }
+  .services__background {
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

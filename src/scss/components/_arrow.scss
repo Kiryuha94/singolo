@@ -7,11 +7,12 @@
   transition: 0.2s linear;
   position: absolute;
   cursor: pointer;
-  z-index: 999;
+  z-index: 3;
+  top: 50%;
+
 
   &_left {
     transform: rotate(-45deg);
-    top: 50%;
     left: 4rem;
 
     @media (max-width: 376px) {
@@ -20,14 +21,11 @@
 
     &:hover {
       transform: scale(1.4) rotate(-45deg);
-      position: absolute;
     }
   }
 
   &_right {
     transform: rotate(135deg);
-    position: absolute;
-    top: 50%;
     right: 3rem;
 
     &:hover {

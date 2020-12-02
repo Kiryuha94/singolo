@@ -11,10 +11,10 @@
 }
 
 .wrapper__burger-menu {
-  background-color: #333;
+  background-color: $color-burger-menu-background;
   opacity: 0.7;
   position: fixed;
-  z-index: 999;
+  z-index: 3;
   height: 100%;
   min-height: 100vh;
   transition: all 0.5s linear;
@@ -22,12 +22,11 @@
 
 .burger-menu {
   position: fixed;
-  background-color: $color-burger-menu-beckground;
-  width: 100%;
-  max-width: 70%;
+  background-color: $color-burger-menu-background;
+  width: 70%;
   height: 100%;
   min-height: 100vh;
-  z-index: 1000;
+  z-index: 4;
   transition: 0.5s;
   animation: slider-menu 0.5s linear;
 

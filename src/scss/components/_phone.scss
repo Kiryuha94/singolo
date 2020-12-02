@@ -3,13 +3,11 @@
   align-items: center;
   justify-content: space-around;
   max-height: 55rem;
-  @media (min-width: 1020px) {
-  }
 
   .vertical-phone-shadow {
     margin: 6.2vw 3vw 7vw 11vw;
     position: relative;
-    z-index: 100;
+    z-index: 2;
   }
 
   .phone_horizontal-shadow {
@@ -44,7 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 100;
+    z-index: 2;
     position: relative;
 
     @media (min-width: 1020px) {
@@ -78,7 +76,7 @@
 
     &__camera {
       color: $color-arrow;
-      border: 3px solid #d8d8d8;
+      border: 3px solid $color-border-camera;
       width: 1vw;
       height: 1vw;
       border-radius: 50%;
@@ -96,7 +94,7 @@
       margin-top: 1.3vw;
       width: 3.6vw;
       height: 0.5vw;
-      background-color: #acacac;
+      background-color: $color-dinamic;
       border-radius: 3px;
 
       @media (min-width: 1020px) {
@@ -109,7 +107,7 @@
       width: 4.1vw;
       height: 4.1vw;
       border-radius: 50%;
-      background-color: #fafafa;
+      background-color: $color-button;
       margin-top: 0.53vw;
       display: flex;
       justify-content: center;
@@ -125,7 +123,7 @@
     &__square {
       width: 1.5vw;
       height: 1.5vw;
-      border: 2px solid #bababa;
+      border: 2px solid $color-border-sqare;
       border-radius: 4px;
 
       @media (min-width: 1020px) {
@@ -139,16 +137,10 @@
         width: 100%;
         height: 100%;
       }
-      border: 3.4px solid #c7c7c7;
+      border: 3.4px solid $color-border-screen;
       margin-top: 2.3vw;
       width: 18.7vw;
       height: 33.1vw;
-      &--disable {
-        background-color: #000;
-        > img {
-          display: none;
-        }
-      }
 
       @media (min-width: 1020px) {
         width: 18.7rem;
@@ -166,7 +158,7 @@
       justify-content: space-around;
       flex-direction: row-reverse;
       position: relative;
-      z-index: 100;
+      z-index: 2;
 
       @media (min-width: 1020px) {
         width: 45rem;
@@ -176,7 +168,7 @@
       .phone__camera {
         margin-top: 0;
         color: $color-arrow;
-        border: 3px solid #d8d8d8;
+        border: 3px solid $color-border-camera;
         width: 1vw;
         height: 1vw;
         border-radius: 50%;
@@ -195,7 +187,7 @@
         margin-right: 1.3vw;
         width: 0.5vw;
         height: 3.6vw;
-        background-color: #acacac;
+        background-color: $color-dinamic;
         border-radius: 3px;
 
         @media (min-width: 1020px) {
@@ -209,7 +201,7 @@
           width: 100%;
           height: 100%;
         }
-        border: 3.4px solid #c7c7c7;
+        border: 3.4px solid$color-border-screen;
         margin: 0 2.3vw 0 0.53vw;
         width: 33.1vw;
         height: 18.7vw;

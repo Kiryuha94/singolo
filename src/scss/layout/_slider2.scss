@@ -30,6 +30,7 @@
 
       &_left {
         transform: translate(2rem, 0);
+        
         img {
           width: 100%;
         }
@@ -37,7 +38,7 @@
     }
 
     .phone-center {
-      z-index: 100;
+      z-index: 2;
       max-width: 25vw;
 
       img {
