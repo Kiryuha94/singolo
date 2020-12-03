@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarservices = document.getElementById('navbarservices')
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
-  let currentTab = navbarHome
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
-
+  const links = document.getElementById('links')
+  const linksArry = [...links.children]
   const scrollOptions = {
     behavior: 'smooth',
     block: 'start',
@@ -63,26 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  navbarHome.addEventListener('click', () => {
-    home.scrollIntoView(scrollOptions)
-  })
-
-  navbarservices.addEventListener('click', () => {
-    services.scrollIntoView(scrollOptions)
-  })
-
-  navbarPortfolio.addEventListener('click', () => {
-    portfolio.scrollIntoView(scrollOptions)
-  })
-
+  const clickScroll = (element) => () => {
+    element.scrollIntoView(scrollOptions)
+    linksArry.forEach((i) => {
+      i.classList.remove('active')
+    })
+  }
+  navbarHome.addEventListener('click', clickScroll(home))
+  navbarservices.addEventListener('click', clickScroll(services))
+  navbarPortfolio.addEventListener('click', clickScroll(portfolio))
   navbarAbout.addEventListener('click', () => {
     about.scrollIntoView(scrollOptions)
-    currentTab.classList.remove('active')
     navbarAbout.classList.add('active')
-    currentTab = navbarAbout
   })
-
-  navbarContact.addEventListener('click', () => {
-    contact.scrollIntoView(scrollOptions)
-  })
+  navbarContact.addEventListener('click', clickScroll(contact))
 })

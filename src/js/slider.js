@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     s2.style.left = `${width}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-
-    const step = width / 200
+    const quantityStep = 200
+    const step = width / quantityStep
 
     const interval = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
