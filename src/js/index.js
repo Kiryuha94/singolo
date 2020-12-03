@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
-  const links = document.getElementById('links')
-  const linksArry = [...links.children]
+  let currentTag = navbarHome
   const scrollOptions = {
     behavior: 'smooth',
     block: 'start',
@@ -63,18 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  const clickScroll = (element) => () => {
+  const clickScroll = (element, navElement) => () => {
     element.scrollIntoView(scrollOptions)
-    linksArry.forEach((i) => {
-      i.classList.remove('active')
-    })
+    currentTag.classList.remove('active')
+    currentTag = navElement
+    navElement.classList.add('active')
   }
-  navbarHome.addEventListener('click', clickScroll(home))
-  navbarservices.addEventListener('click', clickScroll(services))
-  navbarPortfolio.addEventListener('click', clickScroll(portfolio))
-  navbarAbout.addEventListener('click', () => {
-    about.scrollIntoView(scrollOptions)
-    navbarAbout.classList.add('active')
-  })
-  navbarContact.addEventListener('click', clickScroll(contact))
+  navbarHome.addEventListener('click', clickScroll(home, navbarHome))
+  navbarservices.addEventListener('click', clickScroll(services, navbarservices))
+  navbarPortfolio.addEventListener('click', clickScroll(portfolio, navbarPortfolio))
+  navbarAbout.addEventListener('click', clickScroll(about, navbarAbout))
+  navbarContact.addEventListener('click', clickScroll(contact, navbarContact))
 })
