@@ -121,7 +121,6 @@
   list-style: none;
 }
 .navbar__content .navbar__text {
-  cursor: pointer;
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1.4rem;
@@ -129,8 +128,9 @@
   margin-left: 20px;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
 }
-.navbar__content .navbar__text:hover {
+.navbar__content .navbar__text:focus {
   color: #f06c64;
   transition: 0.2s linear;
 }

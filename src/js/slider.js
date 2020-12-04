@@ -25,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isActiveButton) return
     isActiveButton = false
     const nextSlideIndex = slideIndex === 0 ? slidesCount - 1 : slideIndex - 1
-
     const s1 = slides[slideIndex]
     const s2 = slides[nextSlideIndex]
-
     const width = slider.clientWidth
 
     s2.style.left = `${width}px`

@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
-  let currentTag = navbarHome
   const scrollOptions = {
     behavior: 'smooth',
     block: 'start',
@@ -62,15 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  const clickScroll = (element, navElement) => () => {
+  const clickScroll = (element) => () => {
     element.scrollIntoView(scrollOptions)
-    currentTag.classList.remove('active')
-    currentTag = navElement
-    navElement.classList.add('active')
   }
-  navbarHome.addEventListener('click', clickScroll(home, navbarHome))
-  navbarservices.addEventListener('click', clickScroll(services, navbarservices))
-  navbarPortfolio.addEventListener('click', clickScroll(portfolio, navbarPortfolio))
-  navbarAbout.addEventListener('click', clickScroll(about, navbarAbout))
-  navbarContact.addEventListener('click', clickScroll(contact, navbarContact))
+  navbarHome.addEventListener('click', clickScroll(home))
+  navbarservices.addEventListener('click', clickScroll(services))
+  navbarPortfolio.addEventListener('click', clickScroll(portfolio))
+  navbarAbout.addEventListener('click', clickScroll(about))
+  navbarContact.addEventListener('click', clickScroll(contact))
 })

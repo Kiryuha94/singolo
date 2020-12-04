@@ -79,14 +79,13 @@
   list-style: none;
 
   .navbar__text {
-    cursor: pointer;
     @include font($size: 1.2rem, $height: 1.4rem, $weight: bold);
     color: $color-text-white;
     margin-left: 20px;
     text-transform: uppercase;
     position: relative;
-
-    &:hover {
+    cursor: pointer;
+    &:focus {
       color: $color-text-active;
       transition: 0.2s linear;
     }
