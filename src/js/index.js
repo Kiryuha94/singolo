@@ -15,48 +15,50 @@ document.addEventListener('DOMContentLoaded', () => {
     block: 'start',
   }
 
+  const array = [
+    {
+      buttonId: 'navbarHome',
+      sectionId: 'sliderHome',
+    },
+    {
+      buttonId: 'navbarservices',
+      sectionId: 'services',
+    },
+    {
+      buttonId: 'navbarPortfolio',
+      sectionId: 'portfolio',
+    },
+    {
+      buttonId: 'navbarAbout',
+      sectionId: 'aboutPortfolio',
+    },
+    {
+      buttonId: 'navbarContact',
+      sectionId: 'contact',
+    },
+  ]
+
+  const getElement = (id) => document.getElementById(id)
+
   document.addEventListener('scroll', () => {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
-    const arry = [
-      {
-        buttonId: 'navbarHome',
-        sectionId: 'sliderHome',
-      },
-      {
-        buttonId: 'navbarservices',
-        sectionId: 'services',
-      },
-      {
-        buttonId: 'navbarPortfolio',
-        sectionId: 'portfolio',
-      },
-      {
-        buttonId: 'navbarAbout',
-        sectionId: 'aboutPortfolio',
-      },
-      {
-        buttonId: 'navbarContact',
-        sectionId: 'contact',
-      },
-    ]
-    const get = (id) => document.getElementById(id)
 
-    const activeButton = (button) => {
-      arry.forEach(({ buttonId }) => get(buttonId).classList.remove('active'))
+    const addActiveButton = (button) => {
+      array.forEach(({ buttonId }) => getElement(buttonId).classList.remove('active'))
       button.classList.add('active')
     }
 
-    arry.forEach(({ buttonId, sectionId }, index) => {
-      const button = get(buttonId)
-      const section = get(sectionId)
+    array.forEach(({ buttonId, sectionId }, index) => {
+      const button = getElement(buttonId)
+      const section = getElement(sectionId)
       const sectionTop = section.offsetTop
-      const sectionBottom = sectionTop + get(sectionId).offsetHeight
-      if (index + 1 < arry.length) {
+      const sectionBottom = sectionTop + getElement(sectionId).offsetHeight
+      if (index + 1 < array.length) {
         if (scrolled + headerHeight >= sectionTop && scrolled + headerHeight < sectionBottom) {
-          activeButton(button)
+          addActiveButton(button)
         }
       } else if (scrolled + headerHeight + window.innerHeight + 10 > sectionBottom) {
-        activeButton(button)
+        addActiveButton(button)
       }
     })
   })

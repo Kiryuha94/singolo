@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantityStep = 200
     const step = width / quantityStep
 
-    const interval = setInterval(() => {
+    const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
       const left2 = parseFloat(s2.style.left)
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       s2.style.left = `${left2 - step}px`
 
       if (Math.abs(left2) < Math.abs(step)) {
-        clearInterval(interval)
+        clearInterval(intervalForAnimation)
         s2.style.left = '0px'
         s1.classList.add('hidden')
         slideIndex = nextSlideIndex
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const intervalStep = 200
     const step = width / intervalStep
 
-    const interval = setInterval(() => {
+    const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
       const left2 = parseFloat(s2.style.left)
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       s2.style.left = `${left2 + step}px`
 
       if (Math.abs(left2) < Math.abs(step)) {
-        clearInterval(interval)
+        clearInterval(intervalForAnimation)
         s2.style.left = '0px'
         s1.classList.add('hidden')
         slideIndex = nextSlideIndex

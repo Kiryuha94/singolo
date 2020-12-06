@@ -128,9 +128,9 @@
   margin-left: 20px;
   text-transform: uppercase;
   position: relative;
-  cursor: pointer;
 }
-.navbar__content .navbar__text:focus {
+.navbar__content .navbar__text:hover {
+  cursor: pointer;
   color: #f06c64;
   transition: 0.2s linear;
 }
@@ -274,7 +274,6 @@
   height: 47vw;
   z-index: 1;
   top: 0;
-  left: 4;
 }
 .slider__phone .phone__shadow img {
   width: 100%;
@@ -596,14 +595,16 @@
   line-height: 1.2rem;
   color: #767e9e;
   border: 1px solid #767e9e;
+  background-color: #2d303a;
   border-radius: 5px;
   margin-right: 1rem;
   cursor: pointer;
   display: inline-block;
+  outline: 0;
   padding: 2px;
 }
 .portfolio__tags .tag:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .portfolio__tags .tag__active {
   color: #bbbbbb;
@@ -642,6 +643,11 @@
   }
 }
 
+@media (hover: none) {
+  .portfolio__tags .tag:hover {
+    transform: scale(1);
+  }
+}
 .wrapper__footer {
   background-color: #2D303A;
   border-top: 6px solid #323746;
@@ -733,15 +739,15 @@
   transition: 0.5s;
   animation: slider-menu 0.5s linear;
 }
-.burger-menu .header__durger-menu {
+.burger-menu .header__burger-menu {
   display: flex;
 }
-.burger-menu .header__durger-menu .logo__burger-menu {
+.burger-menu .header__burger-menu .logo__burger-menu {
   padding-top: 2.4rem;
   margin: 0 auto;
   max-width: 13.5rem;
 }
-.burger-menu .header__durger-menu .burger_rotate {
+.burger-menu .header__burger-menu .burger_rotate {
   transform: rotate(90deg);
 }
 .burger-menu .navbar__burger-menu {

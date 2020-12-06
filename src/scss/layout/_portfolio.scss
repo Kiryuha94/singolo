@@ -23,22 +23,23 @@
     @include font($weight: 400, $size: 1.2rem, $height: 1.2rem);
     color: $color-portfolio-text_tags;
     border: 1px solid $color-portfolio-text_tags;
+    background-color: $color-background-portfolio;
     border-radius: 5px;
     margin-right: 1rem;
     cursor: pointer;
     display: inline-block;
+    outline: 0;
     padding: 2px;
-     &:hover {
-        transform: scale(1.2);
-      }
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-  
+
   .tag__active {
     color: $color-portfolio-tags_active;
     border: 1px solid $color-portfolio-tags_active;
   }
 }
-
 
 .portfolio__img {
   max-width: 94rem;
@@ -69,5 +70,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 1.3rem;
     grid-row-gap: 1.3rem;
+  }
+}
+
+@media (hover: none) {
+  .portfolio__tags {
+    .tag {
+      &:hover {
+        transform: scale(1);
+      }
+    }
   }
 }
