@@ -8,10 +8,10 @@
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 76.8rem;
   }
-  @media (max-width: 376px) {
+  @media screen and (max-width: 376px) {
     max-width: 37.5rem;
   }
 
@@ -20,7 +20,7 @@
     color: $color-footer-text_icon;
     margin-left: 4rem;
 
-    @media (max-width: 376px) {
+    @media screen and (max-width: 376px) {
       display: none;
     }
   }
@@ -31,7 +31,7 @@
     list-style: none;
     margin-right: 3.4rem;
 
-    @media (max-width: 376px) {
+    @media screen and (max-width: 376px) {
       width: 15.2rem;
       margin: 0 auto;
     }

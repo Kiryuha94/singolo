@@ -58,14 +58,14 @@
     display: none;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 68.7rem;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
   }
 
-  @media (max-width: 376px) {
+  @media screen and (max-width: 376px) {
     max-width: 31.4rem;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 1.3rem;
