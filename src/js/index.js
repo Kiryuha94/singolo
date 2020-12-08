@@ -52,10 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const section = getElement(sectionId)
       const sectionTop = section.offsetTop
       const sectionBottom = sectionTop + getElement(sectionId).offsetHeight
-      if (index + 1 < array.length) {
-        if (scrolled + headerHeight >= sectionTop && scrolled + headerHeight < sectionBottom) {
-          addActiveButton(button)
-        }
+      if (
+        index + 1 < array.length &&
+        scrolled + headerHeight >= sectionTop &&
+        scrolled + headerHeight < sectionBottom
+      ) {
+        addActiveButton(button)
       } else if (scrolled + headerHeight + window.innerHeight + 10 > sectionBottom) {
         addActiveButton(button)
       }
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clickScroll = (element) => () => {
     element.scrollIntoView(scrollOptions)
   }
-  
+
   navbarHome.addEventListener('click', clickScroll(home))
   navbarservices.addEventListener('click', clickScroll(services))
   navbarPortfolio.addEventListener('click', clickScroll(portfolio))

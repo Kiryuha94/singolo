@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const arrowRight = document.getElementById('arrowRight')
   const slides = [...slider.children]
   const slidesCount = slides.length
+  const QUANTITY_STEP = 200
+  const sliderWidth = slider.clientWidth
+  const step = sliderWidth / QUANTITY_STEP
 
   const setSliderHeight = () => {
     const height = getComputedStyle(slides[0]).height
@@ -27,13 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextSlideIndex = slideIndex === 0 ? slidesCount - 1 : slideIndex - 1
     const s1 = slides[slideIndex]
     const s2 = slides[nextSlideIndex]
-    const width = slider.clientWidth
 
-    s2.style.left = `${width}px`
+    s2.style.left = `${sliderWidth}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-    const QUANTITY_STEP = 200
-    const step = width / QUANTITY_STEP
 
     const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
@@ -56,17 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isActiveButton) return
     isActiveButton = true
     const nextSlideIndex = slideIndex + 1 === slidesCount ? 0 : slideIndex + 1
-
     const s1 = slides[slideIndex]
     const s2 = slides[nextSlideIndex]
 
-    const width = slider.clientWidth
-
-    s2.style.left = `${-width}px`
+    s2.style.left = `${-sliderWidth}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-    const QUANTITY_STEP = 200
-    const step = width / QUANTITY_STEP
 
     const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
