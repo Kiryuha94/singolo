@@ -40,14 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getElement = (id) => document.getElementById(id)
 
+  const addActiveButton = (button) => {
+    array.forEach(({ buttonId }) => getElement(buttonId).classList.remove('active'))
+    button.classList.add('active')
+  }
+
   document.addEventListener('scroll', () => {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
-
-    const addActiveButton = (button) => {
-      array.forEach(({ buttonId }) => getElement(buttonId).classList.remove('active'))
-      button.classList.add('active')
-    }
-
     array.forEach(({ buttonId, sectionId }, index) => {
       const button = getElement(buttonId)
       const section = getElement(sectionId)
@@ -66,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clickScroll = (element) => () => {
     element.scrollIntoView(scrollOptions)
   }
+  
   navbarHome.addEventListener('click', clickScroll(home))
   navbarservices.addEventListener('click', clickScroll(services))
   navbarPortfolio.addEventListener('click', clickScroll(portfolio))

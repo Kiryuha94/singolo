@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     s2.style.left = `${width}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-    const quantityStep = 200
-    const step = width / quantityStep
+    const QUANTITY_STEP = 200
+    const step = width / QUANTITY_STEP
 
     const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     s2.style.left = `${-width}px`
     s1.style.left = '0px'
     s2.classList.remove('hidden')
-    const intervalStep = 200
-    const step = width / intervalStep
+    const QUANTITY_STEP = 200
+    const step = width / QUANTITY_STEP
 
     const intervalForAnimation = setInterval(() => {
       const left1 = parseFloat(s1.style.left)

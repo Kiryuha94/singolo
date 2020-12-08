@@ -96,7 +96,7 @@
     color: $color-text-active;
   }
 
-  .navbar_point::after {
+  .navbar__point::after {
     content: '.';
     color: $color-text-white;
     position: absolute;

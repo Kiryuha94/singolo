@@ -138,7 +138,7 @@
 .navbar__content .active {
   color: #f06c64;
 }
-.navbar__content .navbar_point::after {
+.navbar__content .navbar__point::after {
   content: ".";
   color: #ffff;
   position: absolute;
