@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
+ 
   const scrollOptions = {
     behavior: 'smooth',
     block: 'start',
@@ -52,15 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const section = getElement(sectionId)
       const sectionTop = section.offsetTop
       const sectionBottom = sectionTop + getElement(sectionId).offsetHeight
-      if (
-        index + 1 < array.length &&
-        scrolled + headerHeight >= sectionTop &&
-        scrolled + headerHeight < sectionBottom
-      ) {
+      const arrayLength =  index + 1 < array.length
+      const mainScrolled = scrolled + headerHeight >= sectionTop &&
+      scrolled + headerHeight < sectionBottom 
+      const scrollDown =  scrolled + headerHeight + window.innerHeight + 10 > sectionBottom
+      if (arrayLength && mainScrolled || scrollDown) {
         addActiveButton(button)
-      } else if (scrolled + headerHeight + window.innerHeight + 10 > sectionBottom) {
-        addActiveButton(button)
-      }
+       }
     })
   })
 
