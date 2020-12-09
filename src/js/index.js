@@ -11,11 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
  
-  const scrollOptions = {
-    behavior: 'smooth',
-    block: 'start',
-  }
-
   const array = [
     {
       buttonId: 'navbarHome',
@@ -64,7 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   const clickScroll = (element) => () => {
-    element.scrollIntoView(scrollOptions)
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
   }
 
   navbarHome.addEventListener('click', clickScroll(home))

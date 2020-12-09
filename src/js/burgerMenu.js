@@ -12,19 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const hiddenMenu = document.getElementById('hiddenMenu')
   const burger = document.getElementById('burger')
 
-  const scrollOptions = {
-    behavior: 'smooth',
-    block: 'start',
-  }
-
-  burger.addEventListener('click', (e) => {
+  burger.addEventListener('click', () => {
     hiddenMenu.classList.toggle('hidden-menu')
     burger.classList.toggle('burger_rotate')
   })
 
   let currentBurgerTag = navbarBurgerHome
   const onScroll = (element, navBarElement) => () => {
-    element.scrollIntoView(scrollOptions)
+    element.scrollIntoView( {
+      behavior: 'smooth',
+      block: 'start',
+    })
     hiddenMenu.classList.toggle('hidden-menu')
     burger.classList.toggle('burger_rotate')
     currentBurgerTag.classList.remove('navbar__text_active')
