@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
-  navbarHome.classList.add('active')
   const array = [
     {
       buttonId: 'navbarHome',
