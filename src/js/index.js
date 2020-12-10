@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarAbout = document.getElementById('navbarAbout')
   const navbarContact = document.getElementById('navbarContact')
   const headerHeight = document.querySelector('.wrapper__header').getBoundingClientRect().height
- 
+  navbarHome.classList.add('active')
   const array = [
     {
       buttonId: 'navbarHome',
@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   const getElement = (id) => document.getElementById(id)
-
   const addActiveButton = (button) => {
     array.forEach(({ buttonId }) => getElement(buttonId).classList.remove('active'))
     button.classList.add('active')
@@ -48,13 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const section = getElement(sectionId)
       const sectionTop = section.offsetTop
       const sectionBottom = sectionTop + getElement(sectionId).offsetHeight
-      const arrayLength =  index + 1 < array.length
-      const mainScrolled = scrolled + headerHeight >= sectionTop &&
-      scrolled + headerHeight < sectionBottom 
-      const scrollDown =  scrolled + headerHeight + window.innerHeight + 10 > sectionBottom
-      if (arrayLength && mainScrolled || scrollDown) {
+      const arrayLength = index + 1 < array.length
+      const mainScrolled = scrolled + headerHeight >= sectionTop && scrolled + headerHeight < sectionBottom
+      const scrollDown = scrolled + headerHeight + window.innerHeight + 10 > sectionBottom
+      if ((arrayLength && mainScrolled) || scrollDown) {
         addActiveButton(button)
-       }
+      }
     })
   })
 
